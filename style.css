@@ -1,0 +1,36 @@
+/*
+    Eric Sengvanhpheng
+    September 11, 2026
+    CSD 340 Module 6.3
+
+    bioSite css styling
+*/
+
+/* main page */
+body {
+    margin: 0;
+    background-color: floralwhite;
+    color: black;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Quattrocento", serif;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+h2 {
+    font-size: 32px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
