@@ -6,20 +6,75 @@
     bioSite css styling
 */
 
-/* main page */
+/* global / reset styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* global defaults */
 body {
     margin: 0;
     background-color: floralwhite;
     color: black;
     font-family: "Open Sans", sans-serif;
     font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;   /* space between lines of text */
+    display: flex;  /* turns element into flexbox container */
+    flex-direction: column; /* stacks 3 main pieces vertically */
+    min-height: 100vh;  /* forces page to stretch until fills height of screen */
 }
 
-h1,
-h2,
-h3 {
+/* global for images */
+img {
+    max-width: 100%;    /* never grow larger than box it's sitting in */
+    height: auto;   /* keep original proportions of image, so doesn't look stretched/ squish */
+}
+
+.hero {
+    width: 100%;
+    margin: 0 auto 3rem auto; /* centers box, gives room below */
+}
+
+.hero img {
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* adds floating shadow */
+}
+
+.hero figure {
+    margin-bottom: 1.5rem;
+}
+
+.hero p {
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+figcaption {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #555555;
+    margin-top: 0.5rem;
+}
+
+main {
+    flex: 1;
+    max-width: 1200px;
+    width: 95%;
+    margin: 2rem auto; /* add space above and below <main> */
+    text-align: center;
+}
+
+
+/* typography */
+h1, h2, h3 {
     font-family: "Quattrocento", serif;
-    font-weight: bold;
+    font-weight: 700;   /* use numbers since google fonts specified */
+    line-height: 1.2;
+    margin-bottom: 1rem;
 }
 
 h1 {
@@ -34,3 +89,80 @@ h3 {
     font-size: 24px;
 }
 
+/* shared header organism */
+header {
+    background-color: floralwhite;
+    text-align: center;
+    border-bottom: 2px solid darkslategray;
+    padding: 2rem 0;
+}
+
+header h1 {
+    color: darkslategray;
+    margin-bottom: 2rem;
+}
+
+header nav {
+    display: flex;
+    justify-content: center;    /* pushes whole row to middle of bar */
+    gap: 2rem;    /* auto adds even spacing between each link */
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+/* link accent */
+a {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: #4169e1; /* RoyalBlue */
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+/* link hover */
+a:hover {
+    color: #483d8b; /* DarkSlateBlue */
+    text-decoration: underline;
+}
+
+/* 3-card grid (home and hobbies pages) */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* gives each card a size range */
+    gap: 2rem;
+    margin-top: 2rem;
+}
+/* finds first figure makes it span 2 columns */
+.card-grid figure:first-child {
+    grid-column: span 2;
+}
+
+.card-grid figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.card-grid img {
+    width: 100%;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    font-size: 0.85rem;
+}
+
+footer a {
+    color: darkslategray;
+    text-decoration: none;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
