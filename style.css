@@ -3,7 +3,7 @@
     September 11, 2026
     CSD 340 Module 6.3
 
-    bioSite css styling
+    bioSite css styling - shared stylesheet
 */
 
 /* global / reset styles */
@@ -17,11 +17,11 @@
 body {
     margin: 0;
     background-color: floralwhite;
-    color: black;
+    color: #111111;
     font-family: "Open Sans", sans-serif;
     font-size: 16px;
     font-weight: 400;
-    line-height: 1.5;   /* space between lines of text */
+    line-height: 1.6;   /* space between lines of text */
     display: flex;  /* turns element into flexbox container */
     flex-direction: column; /* stacks 3 main pieces vertically */
     min-height: 100vh;  /* forces page to stretch until fills height of screen */
@@ -31,16 +31,20 @@ body {
 img {
     max-width: 100%;    /* never grow larger than box it's sitting in */
     height: auto;   /* keep original proportions of image, so doesn't look stretched/ squish */
+    display: block;
 }
 
+/* --- hero section --- */
 .hero {
     width: 100%;
-    margin: 0 auto 3rem auto; /* centers box, gives room below */
+    margin-bottom: 4rem;
 }
 
 .hero img {
     width: 100%;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* adds floating shadow */
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06); /* adds floating shadow */
 }
 
 .hero figure {
@@ -52,63 +56,78 @@ img {
     max-width: 700px;
     margin: 0 auto;
 }
-
+/* captions */
 figcaption {
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-style: italic;
     color: #555555;
-    margin-top: 0.5rem;
+    margin-top: 0.75rem;
 }
 
 main {
     flex: 1;
-    max-width: 1200px;
-    width: 95%;
-    margin: 2rem auto; /* add space above and below <main> */
+    max-width: 1100px;
+    width: 90%;
+    margin: 3rem auto; /* add space above and below <main> */
     text-align: center;
 }
 
+main p {
+    max-width: 700px;
+    margin: 0 auto 1.5rem auto;
+}
 
 /* typography */
 h1, h2, h3 {
     font-family: "Quattrocento", serif;
     font-weight: 700;   /* use numbers since google fonts specified */
+    color: darkslategray;
     line-height: 1.2;
     margin-bottom: 1rem;
 }
 
-h1 {
-    font-size: 48px;
-}
+h1 { font-size: 48px; }
+h2 { font-size: 32px; }
+h3 { font-size: 24px; }
 
-h2 {
-    font-size: 32px;
-}
-
-h3 {
-    font-size: 24px;
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
 }
 
 /* shared header organism */
 header {
     background-color: floralwhite;
     text-align: center;
-    border-bottom: 2px solid darkslategray;
-    padding: 2rem 0;
+    border-bottom: 1px solid rgba(47, 79, 79, 0.25) ;
+    padding: 2.5rem 1rem;
 }
 
 header h1 {
-    color: darkslategray;
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
+    letter-spacing: 0.5px;
 }
 
 header nav {
     display: flex;
     justify-content: center;    /* pushes whole row to middle of bar */
-    gap: 2rem;    /* auto adds even spacing between each link */
+    gap: 2.5rem;    /* auto adds even spacing between each link */
+}
+
+/* header nav a ------ */
+header nav a {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: darkslategray;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: opacity 0.2s ease;
 }
 
 header nav a:hover {
+    opacity: 0.7;
     text-decoration: underline;
 }
 
@@ -134,9 +153,15 @@ a:hover {
     gap: 2rem;
     margin-top: 2rem;
 }
-/* finds first figure makes it span 2 columns */
+/* finds first card figure, makes it span 2 columns */
 .card-grid figure:first-child {
     grid-column: span 2;
+}
+
+.card-grid figure:first-child img {
+    aspect-ratio: 21 / 9; /* wide cinematic banner proportion */
+    object-fit: cover;
+    object-position: center top; /* locks the focus to the top edge */
 }
 
 .card-grid figure {
@@ -147,22 +172,25 @@ a:hover {
 
 .card-grid img {
     width: 100%;
+    aspect-ratio: 16 / 9; /* create matching rectangle cards */
+    object-fit: cover;
 }
 
 footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 2rem;
+    padding: 1.75rem 2rem;
     font-size: 0.85rem;
 }
 
 footer a {
     color: darkslategray;
     text-decoration: none;
-    transition: color 0.2s ease, text-decoration 0.2s ease;
+    transition: opacity 0.2s ease;
 }
 
 footer a:hover {
+    opacity: 0.7;
     text-decoration: underline;
 }
