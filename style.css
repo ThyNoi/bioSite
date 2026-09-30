@@ -3,7 +3,7 @@
     September 11, 2026
     CSD 340 Module 6.3
 
-    bioSite css styling - shared stylesheet
+    bioSite css styling -  master shared stylesheet
 */
 
 /* global / reset styles */
@@ -15,7 +15,6 @@
 
 /* global defaults */
 body {
-    margin: 0;
     background-color: floralwhite;
     color: #111111;
     font-family: "Open Sans", sans-serif;
