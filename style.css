@@ -41,7 +41,8 @@ img {
 
 .hero img {
     width: 100%;
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12); /* adds floating shadow */
+    border-radius: 0;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12); /* adds floating shadow */
 }
 
 .hero figure {
@@ -49,9 +50,8 @@ img {
 }
 
 .hero p {
-    line-height: 1.6;
-    max-width: 700px;
-    margin: 0 auto;
+    max-width: 100%;
+    margin: 1.5rem 0 0 0;
     text-align: left;
 }
 /* captions */
@@ -60,24 +60,25 @@ figcaption {
     font-style: italic;
     color: #555555;
     margin-top: 0.75rem;
+    text-align: center;
 }
 
-/* --- universal main boundary -- */
+/* --- universal outer main boundary -- */
 main {
     flex: 1;
     max-width: 1200px;
     width: 95%;
     margin: 3rem auto; /* add space above and below <main> */
-    text-align: center;
 }
 
 main p,
 .about-content p,
 .hobbies-grid figure p {
-    font-size: 1.05rem;
-    line-height: 1.75;
+    max-width: 720px;
+    margin: 0 auto 1.5rem auto;
+    line-height: 1.7;
     color: #222222;
-    text-align: left;
+    text-align: left; /* left align inside their columns */
 }
 
 /* typography */
@@ -87,6 +88,7 @@ h1, h2, h3 {
     color: darkslategray;
     line-height: 1.2;
     margin-bottom: 1rem;
+    text-align: center;
 }
 
 h1 { font-size: 52px; }
@@ -108,6 +110,7 @@ header {
 }
 
 header h1 {
+    font-size: 56px;
     margin-bottom: 1.5rem;
     letter-spacing: 2px;
 }
@@ -135,11 +138,10 @@ header nav a {
 header nav a:hover,
 header nav a.current {
     opacity: 1;
-    border-bottom: 2px solid darkslategray;
-    text-decoration: none;
+    border-bottom: 1px solid darkslategray;
 }
 
-/* global link accent */
+/* global link styles */
 a {
     color: #4169e1; /* RoyalBlue */
     text-decoration: none;
@@ -159,17 +161,17 @@ a:hover {
     gap: 2rem;
     margin-top: 2rem;
 }
+
 /* finds first card figure, makes it span 2 columns */
 .card-grid figure:first-child {
     grid-column: span 2;
 }
-
+/* featured top image of grid */
 .card-grid figure:first-child img {
     width: 100%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    object-position: center 20%;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    aspect-ratio: 21 / 9; /* wide banner like & */
+    object-fit: cover; /* --- check for effect */
+    object-position: center bottom; /* --- check for effect */
 }
 
 .card-grid figure {
@@ -177,17 +179,18 @@ a:hover {
     flex-direction: column;
     justify-content: flex-start;
 }
-
+/* general card images (bottom two) */
 .card-grid img {
     width: 100%;
-    aspect-ratio: 4 / 3; /* create matching rectangle cards */
+    aspect-ratio: 16 / 9; /* create matching rectangle cards */
     object-fit: cover;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    object-position: center;
+    border-radius: 0;
 }
 
 .card-grid figure p {
     margin-top: 1rem;
-    text-align: left;
+    width: 100%;
 }
 
 /* --- featured route & banner --- */
@@ -196,6 +199,7 @@ a:hover {
     padding-top: 3rem; /* room inside before the text */
     border-top: 1px solid rgba(47, 79, 79, 0.18) ; /* very faint, barely boundary */
     text-align: center;
+    background: transparent;
 }
 
 .highlight-banner h3 {
@@ -209,7 +213,6 @@ a:hover {
     max-width: 600px;
     margin: 0 auto 1.5rem auto;
     text-align: center;
-    color: #222222;
 }
 
 .highlight-banner .banner-btn {
@@ -232,17 +235,24 @@ a:hover {
 /* about page styling */
 .about-content {
     width: 100%;
+    margin: 0 auto;
 }
 
 .about-content figure {
-    max-width: 800px;
+    max-width: 720px;
     margin: 0 auto 3rem auto; /* centers picture block and adds breathing room before h2 */
-    text-align: center; /* keeps just the caption center */
 }
 
 .about-content figure img {
     width: 100%;
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+    height: auto;
+    display: block;
+    object-fit: contain;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.about-content p {
+    text-align: left;
 }
 
 .about-content h2 {
@@ -254,7 +264,7 @@ a:hover {
 .hobbies-grid {
     display: flex;
     flex-direction: column;
-    max-width: 800px;
+    max-width: 720px;
     gap: 3.5rem;
     margin: 2.5rem auto 0;
 }
@@ -269,12 +279,19 @@ a:hover {
 .hobbies-grid figure img {
     max-width: 100%;
     height: auto;
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+    display: block;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.hobbies-grid figure figcaption {
+    margin-top: 0.75rem;
+    text-align: center;
 }
 
 .hobbies-grid figure p {
     margin-top: 0.75rem;
     width: 100%;
+    text-align: left;
 }
 /* --- shared footer organism --- */
 footer {
@@ -284,7 +301,7 @@ footer {
     margin: 0 auto;
     justify-content: space-between;
     align-items: center;
-    padding: 2.5rem 0 2rem;
+    padding: 2rem 0 2rem;
     font-size: 0.85rem;
 }
 
