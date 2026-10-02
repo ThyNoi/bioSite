@@ -10,9 +10,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- tell browser how to scale -->
 
   <title>Hobbies Page</title>
-
   <!-- Google fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,12 +21,10 @@
   <!-- site css -->
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 <!-- shared header organism -->
 <header>
   <h1>The Open Road</h1>
-
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -40,7 +38,12 @@
     <h2>The Hobbies</h2>
 
     <div class="hobbies-grid">
-      <!-- card 1: biking -->
+
+      <!-- card 1: feature -->
+      <figure>
+        <img src="img/buddha_1.jpg" alt="Buddhas structure">
+      </figure>
+      <!-- card 2: biking -->
       <figure>
         <img src="img/bike_3.jpg" alt="Michael on motorcycle">
         <figcaption>The freedom of the road and open-highway cruising</figcaption>
@@ -49,16 +52,6 @@
         </p>
 
       </figure>
-
-      <!-- card 2: travel -->
-      <figure>
-        <img src="img/laos_3.jpg" alt="Michael at Laos steps">
-        <figcaption>Exploring landmarks, historical sites, and scenic landscapes</figcaption>
-        <p>Traveling is about getting out to explore, experiencing different places firsthand,
-          and enjoying the journey wherever he goes.
-        </p>
-      </figure>
-
       <!-- card 3: cuisine -->
       <figure>
         <img src="img/soup.jpg" alt="Bowl of noodle soup with fresh herbs">
@@ -67,10 +60,17 @@
           cooking and good food are central to his life.
         </p>
       </figure>
+      <!-- card 4: travel -->
+      <figure>
+        <img src="img/laos_3.jpg" alt="Michael at Laos steps">
+        <figcaption>Exploring landmarks, historical sites, and scenic landscapes</figcaption>
+        <p>Traveling is about getting out to explore, experiencing different places firsthand,
+          and enjoying the journey wherever he goes.
+        </p>
+      </figure>
     </div>
   </section>
 </main>
-
 <!-- shared footer organism -->
 <footer>
   <p>&copy; 2026 Michael's Bio</p>

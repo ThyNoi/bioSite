@@ -32,55 +32,6 @@ img {
     height: auto;   /* keep original proportions of image, so doesn't look stretched/ squish */
     display: block;
 }
-
-/* --- hero section --- */
-.hero {
-    width: 100%;
-    margin-bottom: 4rem;
-}
-
-.hero img {
-    width: 100%;
-    border-radius: 0;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12); /* adds floating shadow */
-}
-
-.hero figure {
-    margin-bottom: 1.5rem;
-}
-
-.hero p {
-    max-width: 100%;
-    margin: 1.5rem 0 0 0;
-    text-align: left;
-}
-/* captions */
-figcaption {
-    font-size: 0.85rem;
-    font-style: italic;
-    color: #555555;
-    margin-top: 0.75rem;
-    text-align: center;
-}
-
-/* --- universal outer main boundary -- */
-main {
-    flex: 1;
-    max-width: 1200px;
-    width: 95%;
-    margin: 3rem auto; /* add space above and below <main> */
-}
-
-main p,
-.about-content p,
-.hobbies-grid figure p {
-    max-width: 720px;
-    margin: 0 auto 1.5rem auto;
-    line-height: 1.7;
-    color: #222222;
-    text-align: left; /* left align inside their columns */
-}
-
 /* typography */
 h1, h2, h3 {
     font-family: "Quattrocento", serif;
@@ -96,11 +47,17 @@ h2 { font-size: 32px; }
 h3 { font-size: 24px; }
 
 p {
-    line-height: 1.6;
+    line-height: 1.7;
     color: #222222;
     margin-bottom: 1.5rem;
 }
-
+figcaption {
+    font-size: 0.85rem;
+    font-style: italic;
+    color: #555555;
+    margin-top: 1rem;
+    text-align: center;
+}
 /* shared header organism */
 header {
     background-color: floralwhite;
@@ -141,13 +98,52 @@ header nav a.current {
     border-bottom: 1px solid darkslategray;
 }
 
-/* global link styles */
-a {
-    color: #4169e1; /* RoyalBlue */
-    text-decoration: none;
-    transition: color 0.2s ease;
+/* --- hero section --- */
+.hero {
+    width: 100%;
+    margin-bottom: 4rem;
 }
 
+.hero img {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    width: 100%;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1); /* adds floating shadow */
+}
+
+.hero figure {
+    margin-bottom: 1.5rem;
+}
+
+.hero p {
+    max-width: 720px;
+    margin: 1.5rem auto 0 auto;
+    text-align: left;
+}
+/* captions */
+figcaption {
+    font-size: 0.85rem;
+    font-style: italic;
+    color: #555555;
+    margin-top: 0.75rem;
+    text-align: center;
+}
+
+/* --- global outer main frame -- */
+main {
+    flex: 1;
+    max-width: 1200px;
+    width: 95%;
+    margin: 3rem auto; /* add space above and below <main> */
+}
+
+main > p,
+.about-content p {
+    max-width: 720px;
+    margin: 0 auto 1.5rem auto;
+    line-height: 1.7;
+    text-align: left; /* left align inside their columns */
+}
 /* link hover */
 a:hover {
     color: #483d8b; /* DarkSlateBlue */
@@ -177,7 +173,6 @@ a:hover {
 .card-grid figure {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
 }
 /* general card images (bottom two) */
 .card-grid img {
@@ -185,11 +180,11 @@ a:hover {
     aspect-ratio: 16 / 9; /* create matching rectangle cards */
     object-fit: cover;
     object-position: center;
-    border-radius: 0;
 }
 
 .card-grid figure p {
     margin-top: 1rem;
+    text-align: left;
     width: 100%;
 }
 
@@ -199,12 +194,10 @@ a:hover {
     padding-top: 3rem; /* room inside before the text */
     border-top: 1px solid rgba(47, 79, 79, 0.18) ; /* very faint, barely boundary */
     text-align: center;
-    background: transparent;
 }
 
 .highlight-banner h3 {
     font-size: 22px;
-    letter-spacing: 0.5px;
     margin-bottom: 0.5rem;
 }
 
@@ -229,30 +222,30 @@ a:hover {
 .highlight-banner .banner-btn:hover {
     background-color: #1a2f2f;
     transform: translateY(-2px);
-    text-decoration: none;
 }
 
 /* about page styling */
 .about-content {
+    max-width: 720px;
     width: 100%;
     margin: 0 auto;
 }
 
 .about-content figure {
-    max-width: 720px;
-    margin: 0 auto 3rem auto; /* centers picture block and adds breathing room before h2 */
+    width: 100%;
+    margin: 0 auto 2.5rem auto; /* centers picture block and adds breathing room before h2 */
 }
 
 .about-content figure img {
     width: 100%;
     height: auto;
-    display: block;
-    object-fit: contain;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 }
 
 .about-content p {
     text-align: left;
+    line-height: 1.7;
+    margin-bottom: 2rem;
 }
 
 .about-content h2 {
@@ -260,27 +253,53 @@ a:hover {
     margin-bottom: 2rem;
 }
 
-/* --- hobbies page styling --- */
+/* --- hobbies page styling 1-2-1 showcase --- */
 .hobbies-grid {
-    display: flex;
-    flex-direction: column;
-    max-width: 720px;
-    gap: 3.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
+    max-width: 1200px;
+    gap: 2.5rem;
+    width: 100%;
     margin: 2.5rem auto 0;
+    align-items: start;
 }
 
 .hobbies-grid figure {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    margin: 0;
+}
+/* base image styling, can be overwritten */
+.hobbies-grid figure img {
     width: 100%;
+    display: block;
+    object-fit: cover;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+/* top feature img, spans full width */
+.hobbies-grid figure:first-of-type {
+    grid-column: 1 / -1;
 }
 
-.hobbies-grid figure img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+.hobbies-grid figure:first-of-type img {
+    aspect-ratio: 16 / 7;
+    object-position: center top;
+}
+/* 2 & 3 middle images, motorcycle and soup */
+.hobbies-grid figure:nth-of-type(2) img,
+.hobbies-grid figure:nth-of-type(3) img {
+    aspect-ratio: 4 / 5;
+    object-position: center top;
+}
+.hobbies-grid figure:nth-of-type(4) {
+    grid-column: 1 / -1;
+}
+
+/* bottom feature image spans full width */
+.hobbies-grid figure:nth-of-type(4) img {
+    aspect-ratio: 16 / 9;
+    object-position: center center;
 }
 
 .hobbies-grid figure figcaption {
@@ -292,6 +311,19 @@ a:hover {
     margin-top: 0.75rem;
     width: 100%;
     text-align: left;
+}
+
+/* Mobile responsive fallback */
+@media (max-width: 768px) {
+    .card-grid,
+    .hobbies-grid {
+        grid-template-columns: 1fr;
+    }
+    .card-grid figure:first-child,
+    .hobbies-grid figure:first-of-type,
+    .hobbies-grid figure:nth-child(4) {
+        grid-column: span 1;
+    }
 }
 /* --- shared footer organism --- */
 footer {
@@ -307,6 +339,7 @@ footer {
 
 footer a {
     color: darkslategray;
+    text-decoration: none;
     transition: opacity 0.2s ease;
 }
 
