@@ -3,7 +3,7 @@
     September 11, 2026
     CSD 340 Module 6.3
 
-    bioSite css styling -  master shared stylesheet
+    bioSite css styling - master shared stylesheet
 */
 
 /* global / reset styles */
@@ -21,7 +21,7 @@ body {
     font-size: 16px;
     font-weight: 400;
     line-height: 1.6;   /* space between lines of text */
-    display: flex;  /* turns element into flexbox container */
+    display: flex;      /* turns element into flexbox container */
     flex-direction: column; /* stacks 3 main pieces vertically */
     min-height: 100vh;  /* forces page to stretch until fills height of screen */
 }
@@ -29,9 +29,10 @@ body {
 /* global for images */
 img {
     max-width: 100%;    /* never grow larger than box it's sitting in */
-    height: auto;   /* keep original proportions of image, so doesn't look stretched/ squish */
+    height: auto;       /* keep original proportions so it doesn't look stretched or squished */
     display: block;
 }
+
 /* typography */
 h1, h2, h3 {
     font-family: "Quattrocento", serif;
@@ -41,7 +42,6 @@ h1, h2, h3 {
     margin-bottom: 1rem;
     text-align: center;
 }
-
 h1 { font-size: 52px; }
 h2 { font-size: 32px; }
 h3 { font-size: 24px; }
@@ -51,76 +51,7 @@ p {
     color: #222222;
     margin-bottom: 1.5rem;
 }
-figcaption {
-    font-size: 0.85rem;
-    font-style: italic;
-    color: #555555;
-    margin-top: 1rem;
-    text-align: center;
-}
-/* shared header organism */
-header {
-    background-color: floralwhite;
-    text-align: center;
-    border-bottom: 1px solid rgba(47, 79, 79, 0.25) ;
-    padding: 2.5rem 1rem 2rem 1rem; /* slightly less padding on bottom links anchor to line */
-}
 
-header h1 {
-    font-size: 56px;
-    margin-bottom: 1.5rem;
-    letter-spacing: 2px;
-}
-
-header nav {
-    display: flex;
-    justify-content: center;    /* pushes whole row to middle of bar */
-    gap: 2.5rem;    /* auto adds even spacing between each link */
-}
-
-/* header nav a ------ */
-header nav a {
-    font-size: 0.85rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    color: darkslategray;
-    text-decoration: none;
-    letter-spacing: 1.5px;
-    opacity: 0.75; /* resting state is soft */
-    transition: opacity 0.2s ease, border-color 0.2s ease;
-    padding-bottom: 4px;
-    border-bottom: 2px solid transparent; /* placeholder for clean hover underline */
-}
-
-header nav a:hover,
-header nav a.current {
-    opacity: 1;
-    border-bottom: 1px solid darkslategray;
-}
-
-/* --- hero section --- */
-.hero {
-    width: 100%;
-    margin-bottom: 4rem;
-}
-
-.hero img {
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    width: 100%;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1); /* adds floating shadow */
-}
-
-.hero figure {
-    margin-bottom: 1.5rem;
-}
-
-.hero p {
-    max-width: 720px;
-    margin: 1.5rem auto 0 auto;
-    text-align: left;
-}
-/* captions */
 figcaption {
     font-size: 0.85rem;
     font-style: italic;
@@ -129,12 +60,63 @@ figcaption {
     text-align: center;
 }
 
+/* link styling */
+a {
+    color: darkslategray;
+    transition: opacity 0.2s ease;
+}
+
+a:hover {
+    color: #483d8b; /* DarkSlateBlue hover effect */
+    text-decoration: underline;
+}
+
+/* shared header organism */
+header {
+    background-color: floralwhite;
+    text-align: center;
+    border-bottom: 1px solid rgba(47, 79, 79, 0.25);
+    padding: 2.5rem 1rem 2rem 1rem; /* slightly less padding on bottom so links anchor near line */
+}
+
+header h1 {
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+}
+
+header nav {
+    display: flex;
+    justify-content: center;    /* pushes whole row to middle of bar */
+    gap: 2rem;                /* auto adds even spacing between each link */
+}
+/* header nav a links */
+header nav a {
+    font-size: 0.85rem;
+    font-weight: 600;           /* crisp semi-bold */
+    text-transform: uppercase;  /* clean all-caps menu style */
+    letter-spacing: 1.5px;      /* subtle breathing room between letters */
+    color: darkslategray;
+    text-decoration: none;
+    opacity: 0.75;              /* soft resting state */
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent; /* placeholder to avoid jump on active */
+    transition: opacity 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+/* Hover color for any nav link */
+header nav a:hover {
+    color: #c28b1e;
+}
+/* The solid underline showing the page you are currently on */
+header nav a.current {
+    opacity: 1;
+    border-bottom: 2px solid darkslategray;
+}
 /* --- global outer main frame -- */
 main {
     flex: 1;
     max-width: 1200px;
     width: 95%;
-    margin: 3rem auto; /* add space above and below <main> */
+    margin: 3rem auto;          /* add space above and below <main> */
 }
 
 main > p,
@@ -142,57 +124,105 @@ main > p,
     max-width: 720px;
     margin: 0 auto 1.5rem auto;
     line-height: 1.7;
-    text-align: left; /* left align inside their columns */
-}
-/* link hover */
-a:hover {
-    color: #483d8b; /* DarkSlateBlue */
-    text-decoration: underline;
+    text-align: left;           /* left align inside columns */
 }
 
-/* 3-card grid (home and hobbies pages) */
+/* --- hero section (home) --- */
+.hero {
+    width: 100%;
+    margin-bottom: 4rem;
+}
+
+.hero figure {
+    margin-bottom: 1.5rem;
+}
+
+.hero img {
+    width: 100%;
+}
+
+.hero p {
+    max-width: 720px;
+    margin: 1.5rem auto 0 auto;
+    text-align: left;
+}
+/* --- highway milestones strip --- */
+.milestones {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem 0;
+    margin: 2rem auto 4rem auto;
+    border-top: 1px solid rgba(47, 79, 79, 0.18);
+    border-bottom: 1px solid rgba(47, 79, 79, 0.18);
+    text-align: center;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.stat-number {
+    font-family: "Quattrocento", serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: darkslategray;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #666666;
+}
+/* --- 3-card grid (home page) --- */
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* gives each card a size range */
-    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr); /* creates 2 equal columns */
+    gap: 2.5rem 2rem;
     margin-top: 2rem;
-}
-
-/* finds first card figure, makes it span 2 columns */
-.card-grid figure:first-child {
-    grid-column: span 2;
-}
-/* featured top image of grid */
-.card-grid figure:first-child img {
-    width: 100%;
-    aspect-ratio: 21 / 9; /* wide banner like & */
-    object-fit: cover; /* --- check for effect */
-    object-position: center bottom; /* --- check for effect */
 }
 
 .card-grid figure {
     display: flex;
     flex-direction: column;
 }
+/* finds first card figure, makes it span 2 columns across the top */
+.card-grid figure:first-child {
+    grid-column: span 2;
+}
+
+/* featured top image of grid */
+.card-grid figure:first-child img {
+    width: 100%;
+    aspect-ratio: 21 / 9;       /* wide banner proportion */
+    object-fit: cover;
+    object-position: center bottom;
+}
+
 /* general card images (bottom two) */
 .card-grid img {
     width: 100%;
-    aspect-ratio: 16 / 9; /* create matching rectangle cards */
+    aspect-ratio: 1 / 1;       /* consistent cards */
     object-fit: cover;
     object-position: center;
 }
 
 .card-grid figure p {
-    margin-top: 1rem;
+    margin-top: 0.75rem;
     text-align: left;
     width: 100%;
 }
-
-/* --- featured route & banner --- */
+.card-grid figcaption,
+.hobbies-grid figcaption {
+    text-align: center;
+}
+/* --- featured route & highlight banner --- */
 .highlight-banner {
     margin-top: 4.5rem;
-    padding-top: 3rem; /* room inside before the text */
-    border-top: 1px solid rgba(47, 79, 79, 0.18) ; /* very faint, barely boundary */
+    padding-top: 3rem;          /* room inside before the text */
+    border-top: 1px solid rgba(47, 79, 79, 0.18); /* faint boundary line */
     text-align: center;
 }
 
@@ -222,38 +252,9 @@ a:hover {
 .highlight-banner .banner-btn:hover {
     background-color: #1a2f2f;
     transform: translateY(-2px);
+    text-decoration: none;
 }
-
-/* about page styling */
-.about-content {
-    max-width: 720px;
-    width: 100%;
-    margin: 0 auto;
-}
-
-.about-content figure {
-    width: 100%;
-    margin: 0 auto 2.5rem auto; /* centers picture block and adds breathing room before h2 */
-}
-
-.about-content figure img {
-    width: 100%;
-    height: auto;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-}
-
-.about-content p {
-    text-align: left;
-    line-height: 1.7;
-    margin-bottom: 2rem;
-}
-
-.about-content h2 {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-/* --- hobbies page styling 1-2-1 showcase --- */
+/* --- hobbies page styling (1-2-1 showcase) --- */
 .hobbies-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
@@ -270,41 +271,38 @@ a:hover {
     flex-direction: column;
     margin: 0;
 }
-/* base image styling, can be overwritten */
+
 .hobbies-grid figure img {
     width: 100%;
     display: block;
     object-fit: cover;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
 }
+
 /* top feature img, spans full width */
 .hobbies-grid figure:first-of-type {
     grid-column: 1 / -1;
 }
 
 .hobbies-grid figure:first-of-type img {
-    aspect-ratio: 16 / 7;
+    aspect-ratio: 16 / 9;
     object-position: center top;
 }
-/* 2 & 3 middle images, motorcycle and soup */
+
+/* 2 & 3 middle images */
 .hobbies-grid figure:nth-of-type(2) img,
 .hobbies-grid figure:nth-of-type(3) img {
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 1 / 1;
     object-position: center top;
 }
+
+/* bottom feature image spans full width */
 .hobbies-grid figure:nth-of-type(4) {
     grid-column: 1 / -1;
 }
 
-/* bottom feature image spans full width */
 .hobbies-grid figure:nth-of-type(4) img {
     aspect-ratio: 16 / 9;
-    object-position: center center;
-}
-
-.hobbies-grid figure figcaption {
-    margin-top: 0.75rem;
-    text-align: center;
+    object-position: center top;
 }
 
 .hobbies-grid figure p {
@@ -313,18 +311,6 @@ a:hover {
     text-align: left;
 }
 
-/* Mobile responsive fallback */
-@media (max-width: 768px) {
-    .card-grid,
-    .hobbies-grid {
-        grid-template-columns: 1fr;
-    }
-    .card-grid figure:first-child,
-    .hobbies-grid figure:first-of-type,
-    .hobbies-grid figure:nth-child(4) {
-        grid-column: span 1;
-    }
-}
 /* --- shared footer organism --- */
 footer {
     width: 100%;
@@ -333,17 +319,129 @@ footer {
     margin: 0 auto;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 0 2rem;
+    padding: 2rem 1rem;
     font-size: 0.85rem;
+    border-top: 1px solid rgba(47, 79, 79, 0.15);
 }
 
-footer a {
+/* --- mobile responsive fallback --- */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 38px;
+    }
+
+    header nav {
+        gap: 1.5rem;
+    }
+
+    /* collapse 2-column layouts into a single vertical stack on mobile */
+    .card-grid,
+    .hobbies-grid,
+    .about-intro {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .card-grid figure:first-child,
+    .hobbies-grid figure:first-of-type,
+    .hobbies-grid figure:nth-of-type(4) {
+        grid-column: span 1;
+    }
+
+    .card-grid figure:first-child img,
+    .hobbies-grid figure:first-of-type img,
+    .hobbies-grid figure:nth-of-type(4) img {
+        aspect-ratio: 16 / 9;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+}
+
+/* --- pull-quote styling --- */
+.pull-quote {
+    font-family: "Quattrocento", serif;
+    font-size: 1.15rem;
+    font-style: italic;
     color: darkslategray;
-    text-decoration: none;
-    transition: opacity 0.2s ease;
+    text-align: center;
+    max-width: 600px;
+    margin: 2.5rem auto;
+    padding: 1.25rem 0;
+    border-top: 1px solid rgba(47, 79, 79, 0.18);
+    border-bottom: 1px solid rgba(47, 79, 79, 0.18);
+    line-height: 1.6;
 }
 
-footer a:hover {
-    opacity: 0.7;
-    text-decoration: underline;
+/* stack vertically on mobile */
+@media (max-width: 768px) {
+    .about-intro {
+        grid-template-columns: 1fr;
+    }
+}
+/* --- about page styling --- */
+.about-content {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+/* --- about page side-by-side layout --- */
+.about-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+    align-items: start;
+    margin-top: 2rem;
+}
+
+/* Left sidebar holding photo and quote */
+.about-sidebar {
+    width: 100%;
+}
+
+.about-sidebar figure {
+    margin: 0 0 1.5rem 0;
+    width: 100%;
+}
+
+.about-sidebar figure img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+}
+
+/* Quote styled specifically for sidebar placement */
+.about-sidebar .pull-quote {
+    font-family: "Quattrocento", serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    color: darkslategray;
+    text-align: center;
+    line-height: 1.6;
+    margin: 1.5rem auto 0 auto;
+    padding: 1.25rem 0.5rem;
+    border-top: 1px solid rgba(47, 79, 79, 0.18);
+    border-bottom: 1px solid rgba(47, 79, 79, 0.18);
+}
+
+/* Right story column */
+.about-text {
+    width: 100%;
+}
+.about-text .about-block {
+    margin-bottom: 2rem;
+}
+.about-text h3 {
+    text-align: left;
+    margin-bottom: 0.75rem;
+}
+.about-text p {
+    font-size: 0.96rem;
+    line-height: 1.6;
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+    text-align: left;
 }

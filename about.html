@@ -10,102 +10,102 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- tell browser how to scale -->
     <title>About Page</title>
-
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
-
     <!-- site css -->
     <link rel="stylesheet" href="style.css">
-
 </head>
-
 <body>
 <!-- shared header organism -->
 <header>
     <h1>The Open Road</h1>
-
     <nav>
         <a href="index.html">Home</a>
         <a href="about.html" class="current">About</a>
         <a href="hobbies.html">Hobbies</a>
     </nav>
 </header>
-<!-- main content -->
 <main>
     <article class="about-content">
-        <!-- name heading -->
         <h2>About Michael</h2>
-        <!-- top image with caption -->
-        <figure>
-            <img src="img/bike_2.jpg" alt="Michael on his motorcycle">
-            <figcaption>A ride with the cruiser</figcaption>
-        </figure>
 
+        <div class="about-intro">
+            <!-- Left Column: Photo + Quote -->
+            <div class="about-sidebar">
+                <figure>
+                    <img src="img/bike_2.jpg" alt="Michael on his motorcycle">
+                    <figcaption>A ride with the cruiser</figcaption>
+                </figure>
 
-        <section class="about-block">
-            <h3>Roots in Laos</h3>
-            <p>
-                Born in Xaignabouli, Province in Laos, Michael grew up in the Muang Phiang area in a small
-                village surrounded by rice fields and farmland. His early life in a rural community was simple,
-                centered around farming, family, and countryside living.
-            </p>
-        </section>
+                <blockquote class="pull-quote">
+                    “One of my earliest memories was going out on the water, shrimping with my father.”
+                </blockquote>
+            </div>
 
-        <section class="about-block">
-            <h3>Moving to the United States</h3>
-            <p>
-                In seventh grade, he moved to the United States, a major transition that brought significant culture shock
-                with differences in language, food, and daily life. Adapting over years spent living in Massachusetts
-                and Idaho, learning English in school became an essential step toward building his new life.
-            </p>
-        </section>
+            <!-- Right Column: All Story Sections -->
+            <div class="about-text">
+                <section class="about-block">
+                    <h3>Roots in Laos</h3>
+                    <p>
+                        Born in Xaignabouli, Province in Laos, Michael grew up in the Muang Phiang area in a small
+                        village surrounded by rice fields and farmland. His early life in a rural community was simple,
+                        centered around farming, family, and countryside living.
+                    </p>
+                </section>
 
-        <section class="about-block">
-            <h3>Career and The Open Road</h3>
-            <p>
-                Before becoming a long-haul truck driver, Michael worked several different jobs, including paper delivery,
-                various factories, an auto shop, and worked a long time at Clear
-                Springs, a fish factory. Eventually, he became interested in truck driving after seeing
-                friends, and family members work in the industry. He saw trucking as a good opportunity to
-                earn a living.
-            </p>
+                <section class="about-block">
+                    <h3>Moving to the United States</h3>
+                    <p>
+                        In seventh grade, he moved to the United States, a major transition that brought significant culture shock
+                        with differences in language, food, and daily life. Adapting over years spent living in Massachusetts
+                        and Idaho, learning English in school became an essential step toward building his new life.
+                    </p>
+                </section>
 
-            <p>
-                After becoming a truck driver, he came to enjoy the freedom and travel that came with
-                being on the road. Over the years, he traveled through many parts of the United States.
-                Utah became one of the preferred routes because of its open roads, beautiful scenery, and
-                enjoyable driving conditions.
-            </p>
-        </section>
+                <section class="about-block">
+                    <h3>Career and The Open Road</h3>
+                    <p>
+                        Before becoming a long-haul truck driver, Michael worked several different jobs, including paper delivery,
+                        various factories, an auto shop, and worked a long time at Clear
+                        Springs, a fish factory. Eventually, he became interested in truck driving after seeing
+                        friends, and family members work in the industry. He saw trucking as a good opportunity to
+                        earn a living.
+                    </p>
+                    <p>
+                        After becoming a truck driver, he came to enjoy the freedom and travel that came with
+                        being on the road. Over the years, he traveled through many parts of the United States.
+                        Utah became one of the preferred routes because of its open roads, beautiful scenery, and
+                        enjoyable driving conditions.
+                    </p>
+                </section>
 
-        <section class="about-block">
-            <h3>Interests and Returning Home</h3>
-            <p>
-                Outside of work, Michael has a strong interest in cars and motorcycles. His interest in
-                these began naturally when he was young. He eventually purchased his first sports car
-                from a friend and owned multiple motorcycles.
-            </p>
-            <p>
-                Among the experiences he is most proud of are raising his children and returning to Laos
-                after many years away. His recent trip back was especially meaningful, allowing him to
-                enjoy the food, culture, and sightseeing. The trip was one of his most memorable
-                experiences and a meaningful return to where it all began.
-            </p>
-        </section>
+                <section class="about-block">
+                    <h3>Interests and Returning Home</h3>
+                    <p>
+                        Outside of work, Michael has a strong interest in cars and motorcycles. His interest in
+                        these began naturally when he was young. He eventually purchased his first sports car
+                        from a friend and owned multiple motorcycles.
+                    </p>
+                    <p>
+                        Among the experiences he is most proud of are raising his children and returning to Laos
+                        after many years away. His recent trip back was especially meaningful, allowing him to
+                        enjoy the food, culture, and sightseeing. The trip was one of his most memorable
+                        experiences and a meaningful return to where it all began.
+                    </p>
+                </section>
+            </div>
+        </div>
     </article>
 </main>
-
 <!-- shared footer organism -->
 <footer>
     <p>&copy; 2026 Michael's Bio</p>
     <!-- anchor tag, open link in new tab with security guards -->
     <a href="https://www.visitutah.com/" target="_blank" rel="noopener noreferrer">Explore Utah's Scenic Byways</a>
 </footer>
-
 </body>
 </html>
