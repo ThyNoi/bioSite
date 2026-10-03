@@ -324,6 +324,92 @@ footer {
     border-top: 1px solid rgba(47, 79, 79, 0.15);
 }
 
+/* --- pull-quote styling --- */
+.pull-quote {
+    font-family: "Quattrocento", serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: darkslategray;
+    text-align: center;
+    max-width: 600px;
+    margin: 2.5rem auto;
+    padding: 1.25rem 0;
+    border-top: 1px solid rgba(47, 79, 79, 0.18);
+    border-bottom: 1px solid rgba(47, 79, 79, 0.18);
+    line-height: 1.6;
+}
+/* --- about page styling --- */
+.about-content {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+/* --- about page side-by-side layout --- */
+.about-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+    align-items: start;
+    margin-top: 2rem;
+}
+
+/* Left sidebar holding photo and quote */
+.about-sidebar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 2rem;
+}
+
+.about-sidebar figure {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.about-sidebar figure img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+}
+
+/* Quote styled specifically for sidebar placement */
+.about-sidebar .pull-quote {
+    font-family: "Quattrocento", serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: darkslategray;
+    text-align: center;
+    line-height: 1.6;
+    margin: 0 auto;
+    padding: 1.25rem 0.5rem;
+    border-top: 1px solid rgba(47, 79, 79, 0.18);
+    border-bottom: 1px solid rgba(47, 79, 79, 0.18);
+    width: 100%;
+}
+
+/* Right story column */
+.about-text {
+    width: 100%;
+}
+.about-text .about-block {
+    margin-bottom: 2rem;
+}
+.about-text .about-block:first-child h3 {
+    margin-top: 0;
+}
+.about-text h3 {
+    text-align: left;
+    margin-bottom: 0.75rem;
+}
+.about-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
 /* --- mobile responsive fallback --- */
 @media (max-width: 768px) {
     header h1 {
@@ -359,89 +445,4 @@ footer {
         gap: 1rem;
         text-align: center;
     }
-}
-
-/* --- pull-quote styling --- */
-.pull-quote {
-    font-family: "Quattrocento", serif;
-    font-size: 1.15rem;
-    font-style: italic;
-    color: darkslategray;
-    text-align: center;
-    max-width: 600px;
-    margin: 2.5rem auto;
-    padding: 1.25rem 0;
-    border-top: 1px solid rgba(47, 79, 79, 0.18);
-    border-bottom: 1px solid rgba(47, 79, 79, 0.18);
-    line-height: 1.6;
-}
-
-/* stack vertically on mobile */
-@media (max-width: 768px) {
-    .about-intro {
-        grid-template-columns: 1fr;
-    }
-}
-/* --- about page styling --- */
-.about-content {
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-}
-/* --- about page side-by-side layout --- */
-.about-intro {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3.5rem;
-    align-items: start;
-    margin-top: 2rem;
-}
-
-/* Left sidebar holding photo and quote */
-.about-sidebar {
-    width: 100%;
-}
-
-.about-sidebar figure {
-    margin: 0 0 1.5rem 0;
-    width: 100%;
-}
-
-.about-sidebar figure img {
-    width: 100%;
-    aspect-ratio: 3 / 4;
-    object-fit: cover;
-}
-
-/* Quote styled specifically for sidebar placement */
-.about-sidebar .pull-quote {
-    font-family: "Quattrocento", serif;
-    font-size: 1.05rem;
-    font-style: italic;
-    color: darkslategray;
-    text-align: center;
-    line-height: 1.6;
-    margin: 1.5rem auto 0 auto;
-    padding: 1.25rem 0.5rem;
-    border-top: 1px solid rgba(47, 79, 79, 0.18);
-    border-bottom: 1px solid rgba(47, 79, 79, 0.18);
-}
-
-/* Right story column */
-.about-text {
-    width: 100%;
-}
-.about-text .about-block {
-    margin-bottom: 2rem;
-}
-.about-text h3 {
-    text-align: left;
-    margin-bottom: 0.75rem;
-}
-.about-text p {
-    font-size: 0.96rem;
-    line-height: 1.6;
-    max-width: 100%;
-    margin-bottom: 1.5rem;
-    text-align: left;
 }
